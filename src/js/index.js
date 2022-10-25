@@ -17,6 +17,7 @@ class listItems{
     #description;
     #date;
     #listElm;
+    #objectList = [];
 
     get listElm(){
         return this.#listElm;
@@ -25,20 +26,32 @@ class listItems{
     constructor(description,date){
         this.#description = description;
         this.#date = date;
-        this.#listElm = document.createElement('label');
-        this.#listElm.innerHTML= `<li class="list-group-item"><input class="form-check-input me-1 me-5" type="checkbox" value="" id="firstCheckbox">
+        this.#listElm = document.createElement('li');
+        this.#listElm.classList.add('list-group-item');
+        this.#listElm.innerHTML= `<input class="form-check-input me-1 me-5" type="checkbox" value="" id="firstCheckbox">
         <div class="d-flex flex-column align-items-center">
           <span id="description">${description}</span>
           <span id="date">${date}</span>
         </div>
         <div>
           <i title="Edit itme" class="bi bi-pen"></i>
-        </div></li>`;
+        </div>`;
+
+        this.#objectList.push(this.#listElm);
+
+        this.#listElm.addEventListener('click',()=>{
+            txtDescription.value = this.#description;
+            txtDate.value = this.#date;
+        });
+
+
         
     }
 }
 
 const itemList = [];
+
+
 
 btnNew.addEventListener('click',()=>{
     [btnAdd,btnDelete,txtDescription,txtDate].forEach(ctrl => ctrl.disabled = false);
@@ -49,7 +62,7 @@ btnAdd.addEventListener('click',()=>{
     const newList = new listItems(txtDescription.value, txtDate.value);
     itemList.push(newList);
     const ulList = document.getElementById('ul-list');
-    ulList.append(newList.listElm);  
+    ulList.append(newList.listElm);      
 });
 
 btnDelete.addEventListener('click',()=>{

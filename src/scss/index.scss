@@ -24,20 +24,13 @@
 
 #ul-list{
     width: 100%; 
-    label{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        list-style: none;
-        // background-color: red;
-
-    }
     li{
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
+        user-select: none;
         transition: background-color 250ms;
         &:hover{
             background-color: rgba(128, 128, 128, 0.301);
@@ -47,6 +40,7 @@
         }
     
     }
+    
     
     .bi{
         font-size: 1rem;
