@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="scss/index.scss">
     <script defer src="js/index.js"></script>
 </head>
-<body class="container">
+<body id="body1" class="container">
     <h1 class="text-center text-bg-primary p-3 mt-2">To-Do List App</h1>
     <div class="row">
         <div class="col-xl-4">
@@ -55,6 +55,20 @@
                 <div class="col-xl-12">
                     <div id="completed-task">
                         <h4 class="text-center">Completed Tasks</h4>
+                        <div id="completedListWrapper">
+                            <ul id="completedList" class="list-group">
+                                <!-- <li class="list-group-item">
+                                <input class="form-check-input me-1 me-5" type="checkbox" value="" id="firstCheckbox">
+                                <div class="d-flex flex-column align-items-center">
+                                  <span id="description">Description</span>
+                                  <span id="date">Date</span>
+                                </div>
+                                <div>
+                                  <i class="bi bi-pen"></i>
+                                </div>
+                                </li> -->
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
