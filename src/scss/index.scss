@@ -1,5 +1,10 @@
 .btn{
     font-weight: bold;
+    color: white;
+
+    &:hover{
+        color: white;
+    }
 }
 
 .form-check-input{
@@ -39,9 +44,7 @@
             visibility: visible;
         }
     
-    }
-    
-    
+    }  
     .bi{
         font-size: 1rem;
         visibility: hidden;
@@ -51,6 +54,16 @@
         }
         
     }
+   
+}
 
-    
+.select{
+    background-color: lightblue;
+}
+
+h4{
+    padding: 10px;
+    background-color: rgba(220, 53, 70, 0.959);
+    color: white;
+    font-weight: bold;
 }
